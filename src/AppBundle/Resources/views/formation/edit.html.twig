@@ -1,0 +1,10 @@
+<html>
+    <body>
+        
+        <h3>Editer une formation</h3>
+        
+        {{ form_start(form, {'action': path('validate_edit_formation', {'id': entity.getId()})}) }} <!--entity car c'est le nom que l'on a donné au loisir parcouru dans le tableau-->
+        {{ form(form) }}
+        
+    </body>
+</html>
