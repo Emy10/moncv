@@ -20,7 +20,6 @@ class FormationType extends AbstractType
         $builder->add('Save', SubmitType::class, array(
             'attr' => array('class' => 'save'),
         ));
-        
     }
     
     public function getBlockPrefix()

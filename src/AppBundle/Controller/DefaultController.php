@@ -31,16 +31,16 @@ class DefaultController extends Controller
     
     /**
      * @Route("/admin", name="admin")
-     * @Template() 
+     * @Template()
      */
     public function adminAction(Request $request) //si on veut appeler notre fichier autrement que index, on change indexAction par totoAction
     {
-         return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('homepage');
     }
     
     /**
      * @Route("/demo", name="demo")
-     * @Template() 
+     * @Template()
      */
     public function demoAction(Request $request) //si on veut appeler notre fichier autrement que index, on change indexAction par totoAction
     {
@@ -53,23 +53,19 @@ class DefaultController extends Controller
         return array(); //rajouté
     }
     
-     /**
-     * @Route("/insert", name="formations-emy")
-     * @Template() 
-     */
-    public function insertAction() 
+    /**
+    * @Route("/insert", name="formations-emy")
+    * @Template()
+    */
+    public function insertAction()
     {
-        
-       $form = new Formation(); //instanciation de l'objet $form
-       $form->setName('Ma formation');
+        $form = new Formation(); //instanciation de l'objet $form
+        $form->setName('Ma formation');
        
-       $eManager = $this->getDoctrine()->getManager(); //méthode qui va chercher l'objet EntityManager de Dotrine utilisé pour la sauvegarde de l'objet Formation
+        $eManager = $this->getDoctrine()->getManager(); //méthode qui va chercher l'objet EntityManager de Dotrine utilisé pour la sauvegarde de l'objet Formation
        
-       $eManager->persist($form); //dit à Doctrine de s'occuper de l'objet $form (n'exécute pas la requête)
+        $eManager->persist($form); //dit à Doctrine de s'occuper de l'objet $form (n'exécute pas la requête)
        
-       $eManager->flush(); //exécute la requête (sauvegarde l'objet)
- 
+        $eManager->flush(); //exécute la requête (sauvegarde l'objet)
     }
-    
 }
-

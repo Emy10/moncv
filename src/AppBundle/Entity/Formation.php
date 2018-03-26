@@ -1,45 +1,46 @@
 <?php 
 
     namespace AppBundle\Entity;
-    use Doctrine\ORM\Mapping as ORM;
-    use ApiPlatform\Core\Annotation\ApiResource;
-   
 
-/**
+use Doctrine\ORM\Mapping as ORM;
+    use ApiPlatform\Core\Annotation\ApiResource;
+
+    /**
  * @ApiResource
- * @ORM\Entity 
+ * @ORM\Entity
  * @ORM\Table(name="formation")
 **/
 
-class Formation {
+class Formation
+{
     
-    /** @ORM\Id 
-    * @ORM\Column(type="integer") 
+    /** @ORM\Id
+    * @ORM\Column(type="integer")
     * @ORM\GeneratedValue **/
     private $id;
     
-    /** 
-    * @ORM\Column(type="string") 
+    /**
+    * @ORM\Column(type="string")
     **/
     private $name;
     
-    /** 
-    * @ORM\Column(type="string") 
+    /**
+    * @ORM\Column(type="string")
     **/
     private $ecole;
     
-    /** 
-    * @ORM\Column(type="date") 
+    /**
+    * @ORM\Column(type="date")
     **/
     private $dateDebut;
     
-    /** 
-    * @ORM\Column(type="date") 
+    /**
+    * @ORM\Column(type="date")
     **/
     private $dateFin;
     
-    /** 
-    * @ORM\Column(type="string") 
+    /**
+    * @ORM\Column(type="string")
     **/
     private $lieu;
     
@@ -73,28 +74,33 @@ class Formation {
         return $this->lieu;
     }
     
-    public function setId($id){
+    public function setId($id)
+    {
         $this->id = $id;       //nouvel id stocké dans $id
     }
     
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
     }
     
-    public function setecole($ecole){
+    public function setecole($ecole)
+    {
         $this->ecole = $ecole;
     }
     
-    public function setdateDebut($dateDebut){
+    public function setdateDebut($dateDebut)
+    {
         $this->dateDebut = $dateDebut;
     }
     
-    public function setdateFin($dateFin){
+    public function setdateFin($dateFin)
+    {
         $this->dateFin = $dateFin;
     }
     
-    public function setlieu($lieu){
+    public function setlieu($lieu)
+    {
         $this->lieu = $lieu;
     }
 }
-

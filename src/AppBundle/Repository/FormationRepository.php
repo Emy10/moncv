@@ -1,5 +1,5 @@
  <?php
- 
+
  use Doctrine\ORM\EntityRepository;
 
  /**
