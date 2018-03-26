@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/emy/{name}/{firstname}", name="homepage-emy")
+     * @Route("/emy/{name}/{firstname}", name="homepage")
      * @param Request $request the request
      * @return array
      * @Template()
@@ -30,7 +30,16 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/demo", name="homepage")
+     * @Route("/admin", name="admin")
+     * @Template() 
+     */
+    public function adminAction(Request $request) //si on veut appeler notre fichier autrement que index, on change indexAction par totoAction
+    {
+         return $this->redirectToRoute('homepage');
+    }
+    
+    /**
+     * @Route("/demo", name="demo")
      * @Template() 
      */
     public function demoAction(Request $request) //si on veut appeler notre fichier autrement que index, on change indexAction par totoAction

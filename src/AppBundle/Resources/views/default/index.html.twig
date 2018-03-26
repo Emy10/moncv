@@ -15,6 +15,7 @@
                 <div class="col-md-3">
                     <div class="profile-img">
                         <img src="{{ asset('template/img/img-profile.jpg') }}" class="img-responsive" alt=""/>
+                         <a class="btn btn-info" href="{{ path('admin')}}">Authentification</a>
                     </div>
                     <!-- Profile Image -->
                 </div>
@@ -426,14 +427,14 @@
                                     <h4> {{ formation.getecole() }} </h4>
                                     <p> {{ formation.getlieu() }} </p>
                                     {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="btn btn-warning" href="{{ path('edit_formation', {'id': formation.getId()})}}">Modifier</a>
-                                    <a class="btn btn-danger" href="{{ path('delete_formation', {'id': formation.getId()})}}">Supprimer</a>
+                                        <a class="btn btn-warning" href="{{ path('edit_formation', {'id': formation.getId()})}}">Modifier</a>
+                                        <a class="btn btn-danger" href="{{ path('delete_formation', {'id': formation.getId()})}}">Supprimer</a>
                                     {% endif %}
                                 </div>
                             {% endfor %}   
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
-                         <a class="btn btn-info" href="{{ path('create_formation')}}">Ajouter</a>
+                            <a class="btn btn-info" href="{{ path('create_formation')}}">Ajouter</a>
                         {% endif %}
                     </div>
                     
@@ -470,14 +471,14 @@
                                                 <p> {{ loi.getlieu() }} </p>
                                             </div>
                                             {% if is_granted('ROLE_ADMIN') %}
-                                            <a class="btn btn-warning" href="{{ path('edit_loisirs', {'id': loi.getId()})}}">Modifier</a>
-                                            <a class="btn btn-danger" href="{{ path('delete_loisirs', {'id': loi.getId()})}}">Supprimer</a>
+                                                <a class="btn btn-warning" href="{{ path('edit_loisirs', {'id': loi.getId()})}}">Modifier</a>
+                                                <a class="btn btn-danger" href="{{ path('delete_loisirs', {'id': loi.getId()})}}">Supprimer</a>
                                             {% endif %}
                                         </div>
                                     {% endfor %}   
                                 </div>
                                 {% if is_granted('ROLE_ADMIN') %}
-                                <a class="btn btn-info" href="{{ path('create_loisirs')}}">Ajouter</a>
+                                    <a class="btn btn-info" href="{{ path('create_loisirs')}}">Ajouter</a>
                                 {% endif %}
                              </div>
                         </div>
