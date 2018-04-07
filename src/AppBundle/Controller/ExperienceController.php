@@ -10,110 +10,110 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 
-use AppBundle\Form\FormationType;
-use AppBundle\Entity\Formation;
+use AppBundle\Form\ExperienceType;
+use AppBundle\Entity\Experience;
 
 /**
- * @Route("/formation")
+ * @Route("/experience")
  */
-class FormationController extends Controller
+class ExperienceController extends Controller
 {
     /**
-    * @Route("/create", name="create_formation")
+    * @Route("/create", name="create_experience")
     * @Template()
     * @Security("has_role('ROLE_ADMIN')")
     */
     public function createAction()
     {
-        $formation = new Formation();
-        $form = $this->createForm(FormationType::class, $formation);
+        $experience = new Experience();
+        $form = $this->createForm(ExperienceType::class, $experience);
         
         return array(
-          'entity' => $formation,
+          'entity' => $experience,
           'form' => $form->createView(),
         );
     }
      
     /**
-     * @Route("/create_valid", name="validate_create_formation")
+     * @Route("/create_valid", name="validate_create_experience")
      * @Method("POST")
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function validateFormationAction(Request $request)
+    public function validateExperienceAction(Request $request)
     {
-        $formation = new Formation();
-        $form = $this->createForm(FormationType::class, $formation);
+        $experience = new Experience();
+        $form = $this->createForm(ExperienceType::class, $experience);
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
             $eManager = $this->getDoctrine()->getManager();
-            $eManager->persist($formation);
+            $eManager->persist($experience);
             $eManager->flush();
             
             return $this->redirectToRoute('homepage'); //la page vers laquelle je veux me diriger
         }
         
-        return $this->redirectToRoute('create_formation', array(
-            'entity' => $formation,
+        return $this->redirectToRoute('create_experience', array(
+            'entity' => $experience,
             'form' => $form->createView(),
             ));
     }
       
     /**
-     * @Route("/edit/{id}", name="edit_formation")
+     * @Route("/edit/{id}", name="edit_experience")
      * @Template()
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction($id)
     {
         $eManager = $this->getDoctrine()->getManager();
-        $formation = $eManager->getRepository("AppBundle:Formation")->FindOneBy(["id" => $id]);
-        $form = $this->createForm(FormationType::class, $formation);
+        $experience = $eManager->getRepository("AppBundle:Experience")->FindOneBy(["id" => $id]);
+        $form = $this->createForm(ExperienceType::class, $experience);
         
         return array(
-          'entity' => $formation,
+          'entity' => $experience,
           'form' => $form->createView(),
         );
     }
      
     /**
-    * @Route("/edit_valid/{id}", name="validate_edit_formation")
+    * @Route("/edit_valid/{id}", name="validate_edit_experience")
     * @Method("POST")
     * @Security("has_role('ROLE_ADMIN')")
     */
-    public function validateEditFormationAction(Request $request, $id)
+    public function validateEditExperienceAction(Request $request, $id)
     {
         $eManager = $this->getDoctrine()->getManager();
-        $formation = $eManager->getRepository("AppBundle:Formation")->FindOneBy(["id" => $id]);
-        $form = $this->createForm(FormationType::class, $formation);
+        $experience = $eManager->getRepository("AppBundle:Experience")->FindOneBy(["id" => $id]);
+        $form = $this->createForm(ExperienceType::class, $experience);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $eManager->persist($formation);
+            $eManager->persist($experience);
             $eManager->flush();
             return $this->redirectToRoute('homepage');
         }
-        return $this->redirectToRoute('create_formation', array(
-            'entity' => $formation,
+        return $this->redirectToRoute('create_experience', array(
+            'entity' => $experience,
             'form' => $form->createView(),
         ));
     }
     
     /**
-     * @Route("/delete/{id}", name="delete_formation")
+     * @Route("/delete/{id}", name="delete_experience")
      * @Template()
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction($id)
     {
         $eManager = $this->getDoctrine()->getManager();
-        $formation = $eManager->getRepository("AppBundle:Formation")->FindOneBy(["id" => $id]);
-        $form = $this->createForm(FormationType::class, $formation);
-        $eManager->remove($formation);
+        $experience = $eManager->getRepository("AppBundle:Experience")->FindOneBy(["id" => $id]);
+        $form = $this->createForm(ExperienceType::class, $experience);
+        $eManager->remove($experience);
         $eManager->flush();
         return $this->redirectToRoute('homepage');
         
         return array(
-          'entity' => $formation,
+          'entity' => $experience,
           'form' => $form->createView(),
         );
     }

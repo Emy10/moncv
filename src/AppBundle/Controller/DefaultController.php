@@ -21,11 +21,13 @@ class DefaultController extends Controller
         $forms = $this->getDoctrine()->getRepository("AppBundle:Formation")->findAll();
         $loisirs = $this->getDoctrine()->getRepository('AppBundle:Loisirs')->findAll();
         //$loisirs = $this->getDoctrine()->getRepository('AppBundle:Loisirs')->findBy(array('name' => 'D')); pour afficher seulement le nom des loisirs commençant par D
+        $experience = $this->getDoctrine()->getRepository('AppBundle:Experience')->findAll();
         
         return array(
             'name'=> $name, 'firstname'=> $firstname,
             'formations' => $forms,
             'loisirs' => $loisirs,
+            'experience' => $experience,
         );
     }
     

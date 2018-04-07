@@ -25,12 +25,12 @@ class Experience
     private $name;
     
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="date")
     **/
     private $dateDebut;
     
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="date")
     **/
     private $dateFin;
     

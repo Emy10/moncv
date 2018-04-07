@@ -46,7 +46,7 @@ class LoisirsController extends Controller
             $eManager->persist($loisir);
             $eManager->flush();
             
-            return $this->redirectToRoute('homepage-emy'); //la page vers laquelle je veux me diriger
+            return $this->redirectToRoute('homepage'); //la page vers laquelle je veux me diriger
         }
         
         return $this->redirectToRoute('create_loisir', array(
@@ -84,7 +84,7 @@ class LoisirsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $eManager->persist($loisir);
             $eManager->flush();
-            return $this->redirectToRoute('homepage-emy');
+            return $this->redirectToRoute('homepage');
         }
         return $this->redirectToRoute('create_loisir', array(
             'entity' => $loisir,
@@ -103,7 +103,7 @@ class LoisirsController extends Controller
         $form = $this->createForm(LoisirsType::class, $loisir);
         $eManager->remove($loisir);
         $eManager->flush();
-        return $this->redirectToRoute('homepage-emy');
+        return $this->redirectToRoute('homepage');
         
         return array(
           'entity' => $loisir,
