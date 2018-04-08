@@ -14,60 +14,65 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="profile-img">
-                        <img src="{{ asset('template/img/img-profile.jpg') }}" class="img-responsive" alt=""/>
-                         <a class="btn btn-info" href="{{ path('admin')}}">Authentification</a>
+                        <img src="{{ asset('template/img/logo-perso-transparent.png') }}" class="img-responsive" alt=""/>
                     </div>
+                    
                     <!-- Profile Image -->
                 </div>
                 <div class="col-md-9">
-                    <div class="name-wrapper">
-                        <h1 class="name">{{ firstname }} {{ name }}</h1>
-                        <span>Freelance Web Designer</span>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="name-wrapper">
+                                <h1 class="name">{{ firstname }} {{ name }}</h1>
+                                <span>Etudiante en web et multimédia</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                             <a class="btn btn-auth" href="{{ path('admin')}}">Authentification</a>
+                        </div>
                     </div>
                     <p>
-                        Credibly embrace visionary internal or "organic" sources and business benefits. Collaboratively
-                        integrate efficient portals rather than customized customer service. Assertively deliver
-                        frictionless services via leveraged interfaces. Conveniently evisculate accurate sources and
-                        process-centric expertise.Energistically fabricate customized imperatives through cooperative
-                        catalysts for change.
+                        Intérêt pour la rédaction et gestion de contenus web
                     </p>
 
 
                     <div class="row">
                         <div class="col-md-3">
                             <div class="personal-details">
-                                <strong>OCTOBER 17, 1996</strong>
-                                <small>BIRTH</small>
+                                <strong>10 décembre 1998</strong>
+                                <small>Date de naissance</small>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="personal-details">
-                                <strong>UNITED KINGDOM</strong>
-                                <small>NATIONALITY</small>
+                                <strong>Française</strong>
+                                <small>Nationalité</small>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="personal-details">
-                                <strong>ENGLISH <span>(NATIVE)</span>, FRENCH <span>(INTERMEDIATE)</span></strong>
-                                <small>LANGUAGE</small>
+                                <strong>Français <span>(langue maternelle)</span> 
+                                <br/>Anglais <span>(niveau B1)</span>
+                                <br/>Italien <span>(niveau B1)</span></strong>
+                                <small>Langues</small>
                             </div>
                         </div>
                     </div>
-
+                    <!-- 
                     <ul class="social-icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-slack" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    </ul>
+                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li> 
+                    </ul> -->
                 </div>
             </div>
         </div>
     </header>
     <!-- .header-->
 
-    <section class="section-wrapper">
+   <!-- <section class="section-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -105,10 +110,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- .activity-wrapper -->
 
-    <section class="work-history-wrapper section-wrapper">
+    <!--<section class="work-history-wrapper section-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -146,10 +151,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- .work-history-wrapper -->
 
-    <section class="expertise-wrapper section-wrapper">
+    <!--<section class="expertise-wrapper section-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -206,15 +211,52 @@
 
 
         </div>
-    </section>
+    </section> 
     <!-- .expertise-wrapper -->
+
+<section class="section-education section-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="section-title"><h2>Formations</h2></div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% for formation in formations %}
+                                <div class="content-item">
+                                    <small> {{ formation.getDateDebut()|date("m/Y") }} - {{ formation.getDateFin()|date("m/Y") }} </small>
+                                    <h3> {{ formation.getname() }} </h3>
+                                    <h4> {{ formation.getecole() }} </h4>
+                                    <p> {{ formation.getlieu() }} </p>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a class="btn btn-warning" href="{{ path('edit_formation', {'id': formation.getId()})}}">Modifier</a>
+                                        <a class="btn btn-danger" href="{{ path('delete_formation', {'id': formation.getId()})}}">Supprimer</a>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}   
+                        </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-secondary" href="{{ path('create_formation')}}">Ajouter</a>
+                        {% endif %}
+                    </div>
+                    
+                    <!--.row-->
+                </div>
+            </div>
+            <!--.row-->
+        </div>
+        <!-- .container -->
+    </section>
+    <!-- .section-education -->
 
     <section class="section-wrapper skills-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="section-title">
-                        <h2>Skills</h2>
+                        <h2>Compétences</h2>
                     </div>
                 </div>
 
@@ -223,15 +265,15 @@
                         <div class="col-md-6">
                             <div class="progress-wrapper">
 
-                                <h3>CODING SKILLS</h3>
+                                <h3>Capacités en web</h3>
 
                                 <div class="progress-item">
                                     <span class="progress-title">HTML5</span>
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 62%"><span
-                                                class="progress-percent"> 62%</span>
+                                             aria-valuemax="100" style="width: 70%"><span
+                                                class="progress-percent"> 70%</span>
                                         </div>
                                     </div>
                                     <!-- .progress -->
@@ -243,34 +285,34 @@
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 90%"><span
-                                                class="progress-percent"> 90%</span>
+                                             aria-valuemax="100" style="width: 60%"><span
+                                                class="progress-percent"> 60%</span>
                                         </div>
                                     </div>
                                     <!-- /.progress -->
                                 </div>
                                 <!-- /.skill-progress -->
-
-                                <div class="progress-item">
-                                    <span class="progress-title">PHP</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 75%;"><span
-                                                class="progress-percent"> 75%</span>
-                                        </div>
-                                    </div>
-                                    <!-- /.progress -->
-                                </div>
-                                <!-- /.skill-progress -->
-
                                 <div class="progress-item">
                                     <span class="progress-title">JavaScript</span>
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 55%;"><span
-                                                class="progress-percent"> 55%</span>
+                                             aria-valuemax="100" style="width: 35%;"><span
+                                                class="progress-percent"> 35%</span>
+                                        </div>
+                                    </div>
+                                    <!-- /.progress -->
+                                </div>
+                                
+                                <!-- /.skill-progress -->
+                                
+                                <div class="progress-item">
+                                    <span class="progress-title">PHP</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                             aria-valuemax="100" style="width: 30%;"><span
+                                                class="progress-percent"> 30%</span>
                                         </div>
                                     </div>
                                     <!-- /.progress -->
@@ -283,15 +325,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="progress-wrapper">
-                                <h3>DESIGN TOOLS</h3>
+                                <h3>Capacités en multimédia</h3>
 
                                 <div class="progress-item">
                                     <span class="progress-title">Photoshop</span>
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 90%"><span
-                                                class="progress-percent"> 90%</span>
+                                             aria-valuemax="100" style="width: 40%"><span
+                                                class="progress-percent"> 40%</span>
                                         </div>
                                     </div>
                                     <!-- .progress -->
@@ -299,11 +341,24 @@
                                 <!-- .skill-progress -->
 
                                 <div class="progress-item">
-                                    <span class="progress-title">Illustrator</span>
+                                    <span class="progress-title">Illustrator et Indesign</span>
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 70%"><span
+                                             aria-valuemax="100" style="width: 30%"><span
+                                                class="progress-percent"> 30%</span>
+                                        </div>
+                                    </div>
+                                    <!-- /.progress -->
+                                </div>
+                                <!-- /.skill-progress -->
+
+                                <div class="progress-item">
+                                    <span class="progress-title">Premiere Pro</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                             aria-valuemax="100" style="width: 50%;"><span
                                                 class="progress-percent"> 50%</span>
                                         </div>
                                     </div>
@@ -312,25 +367,12 @@
                                 <!-- /.skill-progress -->
 
                                 <div class="progress-item">
-                                    <span class="progress-title">Sketch</span>
-
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 75%;"><span
-                                                class="progress-percent"> 75%</span>
-                                        </div>
-                                    </div>
-                                    <!-- /.progress -->
-                                </div>
-                                <!-- /.skill-progress -->
-
-                                <div class="progress-item">
-                                    <span class="progress-title">MACAW</span>
+                                    <span class="progress-title">Final Cut Pro</span>
 
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 55%;"><span
-                                                class="progress-percent"> 55%</span>
+                                             aria-valuemax="100" style="width: 30%;"><span
+                                                class="progress-percent"> 30%</span>
                                         </div>
                                     </div>
                                     <!-- /.progress -->
@@ -372,7 +414,7 @@
                                 {% endfor %}   
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-info" href="{{ path('create_experience')}}">Ajouter</a>
+                            <a class="btn btn-secondary" href="{{ path('create_experience')}}">Ajouter</a>
                         {% endif %}
                     </div>
                 </div>
@@ -384,42 +426,7 @@
     </section>
     <!-- .section-experience -->
 
-    <section class="section-education section-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="section-title"><h2>Formations</h2></div>
-                </div>
-
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-12">
-                            {% for formation in formations %}
-                                <div class="content-item">
-                                    <small> {{ formation.getDateDebut()|date("m/Y") }} - {{ formation.getDateFin()|date("m/Y") }} </small>
-                                    <h3> {{ formation.getname() }} </h3>
-                                    <h4> {{ formation.getecole() }} </h4>
-                                    <p> {{ formation.getlieu() }} </p>
-                                    {% if is_granted('ROLE_ADMIN') %}
-                                        <a class="btn btn-warning" href="{{ path('edit_formation', {'id': formation.getId()})}}">Modifier</a>
-                                        <a class="btn btn-danger" href="{{ path('delete_formation', {'id': formation.getId()})}}">Supprimer</a>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}   
-                        </div>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-info" href="{{ path('create_formation')}}">Ajouter</a>
-                        {% endif %}
-                    </div>
-                    
-                    <!--.row-->
-                </div>
-            </div>
-            <!--.row-->
-        </div>
-        <!-- .container -->
-    </section>
-    <!-- .section-education -->
+    
 
     <section class="section-profile section-wrapper">
         <div class="container">
@@ -435,9 +442,10 @@
                                     {% for loi in loisirs %} <!--loi est l'objet (le loisir) du tableau loisirs que l'on parcourt -->  
                                         <div class="media">
                                             <div class="media-left">
-                                                <a href="#">
+                                            <!--.    <a href="#">
                                                     <img class="media-object" src="{{ asset('template/img/m-logo-studio.png') }}" alt="...">
-                                                </a>
+                                                    </a> 
+                                            -->
                                             </div>
                                             <div class="media-body">
                                                 <h3 class="media-heading"> {{ loi.getname() }} </h3>
@@ -452,7 +460,7 @@
                                     {% endfor %}   
                                 </div>
                                 {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="btn btn-info" href="{{ path('create_loisirs')}}">Ajouter</a>
+                                    <a class="btn btn-secondary" href="{{ path('create_loisirs')}}">Ajouter</a>
                                 {% endif %}
                              </div>
                         </div>
@@ -479,12 +487,11 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-1.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/community-logo-rigolo.jpg') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Creative concepts</h3>
-                                    <small>domain.com</small>
+                                    <h3>Logo Comm'Unity</h3>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -493,12 +500,11 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-2.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/logo-rusky-bania.png') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Customer focused</h3>
-                                    <small>domain.com</small>
+                                    <h3>Logo Rusky Bania</h3>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -507,12 +513,11 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-3.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/carte-de-visite-community.PNG') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Management methodology</h3>
-                                    <small>domain.com</small>
+                                    <h3>Carte de visite Comm'Unity</h3>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -521,12 +526,12 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-4.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/community-depliant.jpg') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Market research</h3>
-                                    <small>domain.com</small>
+                                    <h3>Dépliant Comm'unity</h3>
+                                    <small>Rédaction de contenus</small>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -535,12 +540,12 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-5.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/photo3-book.JPG') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Market research</h3>
-                                    <small>domain.com</small>
+                                    <h3>Photo réalisée en studio</h3>
+                                    <small>Avec un laser vert</small>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -549,12 +554,11 @@
                         <div class="col-md-4 col-sm-6">
                             <a class="portfolio-item" href="#">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('template/img/portfolio-6.jpg') }}" alt="">
+                                    <img src="{{ asset('template/img/photo-book.jpg') }}" alt="">
                                 </div>
 
                                 <div class="portfolio-info">
-                                    <h3>Market research</h3>
-                                    <small>domain.com</small>
+                                    <h3>Photo réalisée en studio</h3>
                                 </div>
                                 <!-- portfolio-info -->
                             </a>
@@ -568,7 +572,7 @@
     </section>
     <!-- .portfolio -->
 
-    <section class="review-section section-wrapper">
+    <!--<section class="review-section section-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -589,15 +593,15 @@
                                     <div class="user-name">Sofia Voigt</div>
                                     <!--.user-name-->
 
-                                    <div class="rating" data-star_rating="5.0">
+                               <!-- <div class="rating" data-star_rating="5.0">
                                         <div class="rating-total">
                                             <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
-                                            <div class="rating-progress rate-5">
+                               <!--             <div class="rating-progress rate-5">
                                             </div>
                                         </div>
                                     </div>
                                     <!--.rating-->
-                                </div>
+                            <!--    </div>
                             </div>
 
 
@@ -607,28 +611,28 @@
                                 technology. Collaboratively unleash.
                             </div>
                             <!--.review-text-->
-                        </div>
+                       <!-- </div>
                         <!--.item-->
-
-                        <div class="item">
+                        
+                     <!--   <div class="item">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="{{ asset('template/img/img-testimonial-1.jpg') }}" alt="avatar"/>
                                 </div>
-
+                                    
                                 <div class="media-body">
                                     <div class="user-name">Matteo Müller</div>
                                     <!--.user-name-->
-
+                                <!--
                                     <div class="rating" data-star_rating="4.0">
                                         <div class="rating-total">
                                             <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
-                                            <div class="rating-progress rate-4">
+                                    <!--        <div class="rating-progress rate-4">
                                             </div>
                                         </div>
                                     </div>
                                     <!--.rating-->
-                                </div>
+                        <!--       </div>
                             </div>
                             <div class="review-text">
                                 Uniquely target empowered relationships after client-based e-commerce. Energistically morph
@@ -636,10 +640,10 @@
                                 whereas intermandated applications.
                             </div>
                             <!--.review-text-->
-                        </div>
+                    <!--    </div>
                         <!--.item-->
 
-                        <div class="item">
+                    <!--     <div class="item">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="{{ asset('template/img/img-testimonial-3.jpg') }}" alt="avatar"/>
@@ -649,15 +653,15 @@
                                     <div class="user-name">Noel Schulze</div>
                                     <!--.user-name-->
 
-                                    <div class="rating" data-star_rating="3.0">
+                    <!--              <div class="rating" data-star_rating="3.0">
                                         <div class="rating-total">
                                             <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
-                                            <div class="rating-progress rate-3">
+                    <!--                        <div class="rating-progress rate-3">
                                             </div>
                                         </div>
                                     </div>
                                     <!--.rating-->
-                                </div>
+                    <!--            </div>
                             </div>
                             <div class="review-text">
                                 Enthusiastically mesh an expanded array of infrastructures through distinctive customer
@@ -665,10 +669,10 @@
                                 Uniquely fabricate just.
                             </div>
                             <!--.review-text-->
-                        </div>
+                    <!--    </div>
                         <!--.item-->
 
-                        <div class="item">
+                   <!--     <div class="item">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="{{ asset('template/img/unknown.png') }}" alt="avatar"/>
@@ -678,15 +682,15 @@
                                     <div class="user-name">Jason Lehmann</div>
                                     <!--.user-name-->
 
-                                    <div class="rating" data-star_rating="2.0">
+                        <!--            <div class="rating" data-star_rating="2.0">
                                         <div class="rating-total">
                                             <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
-                                            <div class="rating-progress rate-2">
+                        <!--                    <div class="rating-progress rate-2">
                                             </div>
                                         </div>
                                     </div>
                                     <!--.rating-->
-                                </div>
+                        <!--        </div>
                             </div>
                             <div class="review-text">
                                 Proactively network unique potentialities rather than one-to-one process improvements.
@@ -694,10 +698,10 @@
                                 functionalities. Continually.
                             </div>
                             <!--.review-text-->
-                        </div>
+                    <!--    </div>
                         <!--.item-->
 
-                        <div class="item">
+                    <!--    <div class="item">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="{{ asset('template/img/unknown.png') }}" alt="avatar"/>
@@ -707,15 +711,15 @@
                                     <div class="user-name">Jason Lehmann</div>
                                     <!--.user-name-->
 
-                                    <div class="rating" data-star_rating="1.0">
+                    <!--                <div class="rating" data-star_rating="1.0">
                                         <div class="rating-total">
                                             <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
                                             <div class="rating-progress rate-1">
-                                            </div>
+                    <!--                        </div>
                                         </div>
                                     </div>
                                     <!--.rating-->
-                                </div>
+                    <!--            </div>
                             </div>
                             <div class="review-text">
                                 Progressively leverage existing 24/7 paradigms through exceptional process improvements.
@@ -723,25 +727,26 @@
                                 transform focused value.
                             </div>
                             <!--.review-text-->
-                        </div>
+                <!--        </div>
                         <!--.item-->
 
-                    </div>
+                <!--    </div>
                     <!--#review-->
-                </div>
+            <!--    </div>
             </div>
             <!-- /.row -->
-        </div>
+      <!--  </div>
         <!-- /.container -->
-    </section>
+   <!-- </section> 
     <!-- .review-section -->
+    -->
 
     <section class="section-contact section-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="section-title">
-                        <h2>Contact</h2>
+                        <h2>Contacts</h2>
                     </div>
                 </div>
 
@@ -749,28 +754,22 @@
                     <div class="row">
                         <div class="col-md-3">
                             <address>
-                                <strong>Address</strong><br>
-                                1355 Market Street, Suite 900<br>
-                                San Francisco, CA 94103
+                                <strong>Adresse</strong><br>
+                                50 Passage des dortoirs<br>
+                                38470 VINAY
 
                             </address>
                         </div>
                         <div class="col-md-3">
                             <address>
-                                <strong>Phone Number</strong><br>
-                                +61 3 8376 6284
-                            </address>
-                        </div>
-                        <div class="col-md-3">
-                            <address>
-                                <strong>Mobile Number</strong><br>
-                                987 654 321
+                                <strong>Numéro de téléphone</strong><br>
+                                06 40 78 51 28
                             </address>
                         </div>
                         <div class="col-md-3">
                             <address>
                                 <strong>Email</strong><br>
-                                <a href="mailto:#">coffee@amelie.me</a>
+                                <a href="mailto:#">emelyne.gelas@hotmail.fr</a>
                             </address>
                         </div>
 
@@ -778,12 +777,12 @@
                     <!--.row-->
 
                     <div class="feedback-form">
-                        <h3>GET IN TOUCH</h3>
+                        <h3>ME CONTACTER</h3>
 
                         <form id="contactForm" action="sendemail.php" method="POST">
                             <div class="form-group">
                                 <input type="text" name="name" required="" class="form-control" id="InputName"
-                                       placeholder="Full Name">
+                                       placeholder="Nom">
                             </div>
                             <div class="form-group">
                                 <input type="email" name="email" required="" class="form-control" id="InputEmail"
@@ -791,14 +790,14 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" name="subject" class="form-control" id="InputSubject"
-                                       placeholder="Subject">
+                                       placeholder="Sujet">
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" rows="4" required="" name="message" id="message-text"
-                                          placeholder="Write message"></textarea>
+                                          placeholder="Message"></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>
                     </div>
                     <!-- .feedback-form -->

@@ -13,7 +13,7 @@ class LoisirsType extends AbstractType
     {
         $builder->add('name', TextType::class, array('required'=>true)); //required signifie que le champ doit être rempli
         $builder->add('temps', TextType::class, array('required'=>true)); //required signifie que le champ doit être rempli
-        $builder->add('lieu', TextType::class, array('required'=>true)); //required signifie que le champ doit être rempli
+        $builder->add('lieu', TextType::class, array('required'=>false)); //required signifie que le champ doit être rempli
         $builder->add('Save', SubmitType::class, array(
             'attr' => array('class' => 'save'),
         ));

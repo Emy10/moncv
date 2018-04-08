@@ -66,13 +66,13 @@ h2 {
     }
 
 h3 {
-    font-size   : 13px;
+    font-size   : 15px;
     line-height : 1.8em;
     font-weight : 700;
     }
 
 h4 {
-    font-size   : 15px;
+    font-size   : 14px;
     line-height : 1.8em;
     font-weight : 500;
     }
@@ -116,6 +116,7 @@ a:focus {
 
 p {
     margin-bottom : 20px;
+    font-size: 16px;
     }
 
 strong {
@@ -150,13 +151,23 @@ ul {
 
 /*btn-primary*/
 .btn-primary {
-    background-color : #ff5722;
+    background-color : #600343;
     }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active:focus {
-    background : #de4718;
+    background : #600343;
+    }
+
+/*btn-secondary*/
+.btn-secondary {
+    background-color : #808080;
+    color: #ffffff;
+    }
+.btn-secondary:hover {
+    background-color : #808080;
+    color: #ffffff;
     }
 
 /*btn-default*/
@@ -180,6 +191,14 @@ button:focus,
     outline : none;
     }
 
+.btn-auth {
+    background-color: #600343;
+    color: 	#FFFFFF;
+}
+
+.btn-auth:hover {
+    color: 	#FFFFFF;
+}
 /* --------------------
  *  main Wrapper
  * -------------------*/
@@ -191,7 +210,7 @@ button:focus,
  * Section Wrapper
  *-------------------*/
 .section-wrapper {
-    padding : 50px 0;
+    padding : 30px 0;
     }
 
 @media (max-width : 768px) {
@@ -215,7 +234,7 @@ button:focus,
     }
 
 .section-title h2 {
-    font-size      : 14px;
+    font-size      : 16px;
     margin-bottom  : 5px;
     color          : #bbbbbb;
     text-transform : uppercase;
@@ -236,10 +255,11 @@ button:focus,
  *-----------------------------*/
 
 .header {
-    padding    : 50px 0;
+    padding-top    : 40px;
+    padding-bottom : 20px;
     margin     : 0;
     position   : relative;
-    border-top : 5px solid #ff5722;
+    border-top : 5px solid #600343;
     }
 
 .header .profile-img {
@@ -258,7 +278,7 @@ button:focus,
 
 .header .name-wrapper span {
     font-size : 24px;
-    color     : #ff5722;
+    color     : #600343;
     }
 
 .header .personal-details {
@@ -266,7 +286,7 @@ button:focus,
     }
 
 .header .personal-details strong {
-    font-size   : 13px;
+    font-size   : 15px;
     color       : #444444;
     display     : block;
     line-height : 1;
@@ -372,7 +392,7 @@ button:focus,
     }
 
 .progress-item .progress-title {
-    font-size     : 12px;
+    font-size     : 14px;
     font-weight   : 400;
     display       : inline-block;
     margin-bottom : 5px;
@@ -386,7 +406,7 @@ button:focus,
     }
 
 .progress-item .progress-bar {
-    background-color : #ff5722;
+    background-color : #600343;
     box-shadow       : none;
     text-align       : right;
     }
@@ -413,6 +433,7 @@ button:focus,
 @media (max-width: 768px) {
     .progress-wrapper{
         margin-bottom: 50px;
+        
         }
     }
 
@@ -427,7 +448,8 @@ button:focus,
     }
 
 .portfolio-item .portfolio-thumb img {
-    height    : auto;
+    /*width: 400px;*/
+    height    : 200px;
     display   : block;
     max-width : 100%;
     }
@@ -651,6 +673,7 @@ button:focus,
 
 .content-item h3 {
     margin         : 0 0 10px;
+    font-size: 14px;
     line-height    : 1;
     font-weight    : bold;
     text-transform : uppercase;
@@ -663,6 +686,7 @@ button:focus,
 
 .content-item small {
     color : #888888;
+    font-size: 13px;
     }
 
 /*-------------------
@@ -670,7 +694,7 @@ button:focus,
  *-------------------*/
 
 .section-contact address strong {
-    font-size      : 13px;
+    font-size      : 14px;
     text-transform : uppercase;
     }
 
