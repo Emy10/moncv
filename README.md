@@ -1,16 +1,15 @@
 # Mon CV
 
-Ce CV est un projet réalisé dans le cadre d'un module Symfony suivi au Semestre 4 de mon DUT MMI.
+Ce CV a été réalisé dans le cadre d'un module Symfony suivi au Semestre 4 de mon DUT MMI à l'IUT1 de Grenoble.
 
 ![Haut du CV](/web/template/img/CV1.PNG)
 ![Bas du CV](/web/template/img/CV2.PNG)
 
+## Symfony 
 
-## Symfony 4
+Pour réaliser ce projet de CV, nous avons utilisé le framework Symfony 3.4.
 
-Ce CV a été réalisé à l'aide du framework Symfony 4.
-
-### Installation
+### Installation possible sur :
 
 * Mac OS X
 * Ubuntu
@@ -23,20 +22,24 @@ IDE utilisé : Cloud9
 Installation de Symfony    
 *Pré-requis : PHP 5.4*
 
-Installation de composer    
+Installation de Composer    
 *Pré-requis : PHP 5.4*
 
 Base de données : MYSQL
 
 Lien pour accéder à mon cv : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
 
+Pour s'authentifier en tant qu'administrateur : 
+* Nom d'utilisateur : admin
+* Mot de passe : emy
+
 ## Mes réussites
 
-* Voir mon CV avec une URL web : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
+* Voir mon CV à l'aide d'une URL web : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
 * Intégration d'un template Bootstrap : [https://uicookies.com/downloads/myprofile-simple-html-resume-website-template/](https://uicookies.com/downloads/myprofile-simple-html-resume-website-template/)
 * Création de 3 entités (expérience, formation et loisirs). 
 * Être CRUD pour les parties expérience, formation et loisirs de ma page.
-* Création de formulaires permettant d'ajouter et de modifier des informations de mes parties.
+* Création de formulaires permettant d'ajouter et de modifier des informations dans les parties expérience, formation et loisirs de mon CV.
 * Sécurisation de ma page et possibilité d'éditer des éléments si authentifié en tant qu'ADMIN.
 * Stockage des informations saisies dans la base de données MySQL.
 * Production d'une API du CV avec API Plateform : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/api](https://cv-symfony-emy10.c9users.io/web/app_dev.php/api)
@@ -56,6 +59,13 @@ Lien pour accéder à mon cv : [https://cv-symfony-emy10.c9users.io/web/app_dev.
 
 * Traquer les visites avec FosUserBundle (trop compliqué).
 * Avoir un formulaire de contact fonctionnel.
+
+
+### Mon avis 
+
+Ce projet de réalisation de notre CV avec Symfony était très intéressant et utile car nous pourrons le transmettre à des entreprises ou même le montrer dans le cadre d'entretiens de motivation pour nos poursuites d'études.   
+De plus, nous avons pu découvrir les bases du framework, qui sont assez exceptionnelles et épatantes (beaucoup de composants sont fournis) même si nous avons eu peu de séances.
+A refaire l'année prochaine !!
 
 ### Sources utilisées
 
