@@ -41,7 +41,7 @@ Pour s'authentifier en tant qu'administrateur :
 * Être CRUD pour les parties expérience, formation et loisirs de ma page.
 * Création de formulaires permettant d'ajouter et de modifier des informations dans les parties expérience, formation et loisirs de mon CV.
 * Sécurisation de ma page et possibilité d'éditer des éléments si authentifié en tant qu'ADMIN.
-* Stockage des informations saisies dans la base de données MySQL.
+* Stockage des informations saisies dans la base de données MySQL (utilisation de l'interface Doctrine qui permet de faire le lien entre nos objets et les éléments de la base de données).
 * Production d'une API du CV avec API Plateform : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/api](https://cv-symfony-emy10.c9users.io/web/app_dev.php/api)
 * Code documenté et qui respecte le standard Symfony de PHP_CodeSniffer (correction des erreurs avec PHP CS Fixer mais il en reste !!!).
 * Tests unitaires et test fonctionnel réalisés (avec Codeception).
