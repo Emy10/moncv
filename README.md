@@ -1,3 +1,84 @@
+# *Mon CV*
+
+Ce CV est un projet réalisé dans le cadre d'un module Symfony suivi au Semestre 4 de mon DUT MMI.
+
+## Symfony 4
+
+
+
+### Sources
+
+[https://symfony.com/doc/3.4/setup.html](https://symfony.com/doc/3.4/setup.html)
+[https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html](https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html)
+[https://symfony.com/doc/3.4/doctrine.html](https://symfony.com/doc/3.4/doctrine.html)
+[ https://symfony.com/doc/3.4/templating.html](https://symfony.com/doc/3.4/templating.html)
+[ https://symfony.com/doc/3.4/security.html](https://symfony.com/doc/3.4/security.html)
+[https://symfony.com/doc/3.4/email.html](https://symfony.com/doc/3.4/email.html)
+[ https://symfony.com/doc/3.4/logging.html](https://symfony.com/doc/3.4/logging.html)
+[https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html](https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html)
+[https://symfony.com/doc/current/setup/built_in_web_server.html](https://symfony.com/doc/current/setup/built_in_web_server.html)
+[https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)
+
+### Installation
+
+* Mac OS X
+* Ubuntu
+* Windows 
+
+### Getting started
+
+*What does your user need to know to get everything ready after installation?*
+*Think about databases, config files, and settings.*
+
+IDE utilisé : Cloud9
+
+Installation de Symfony 
+*Pré-requis : PHP 5.4*
+
+Installation de composer 
+*Pré-requis : PHP 5.4*
+
+Lien pour accéder à mon cv : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
+
+
+## Ce que j'ai réalisé
+
+Your patches are welcome. Here's our suggested workflow:
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Send us a pull request with a description of your work. Bonus points for topic branches!
+
+* Voir mon CV avec une URL web : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
+* Création de 3 entités (expérience, formation et loisirs) 
+* CRUD pour les parties expérience, formation et loisirs de ma page
+* Création de formulaires permettant d'ajouter et de modifier des informations de mes parties
+* Sécurisation de ma page et possibilité d'ajout, modification et suppression de mes informations disponibles seulement pour le rôle ADMIN
+* Informations saisies stockées dans la base de données SQL
+* API du CV avec API Plateform : 
+* Code documenté et qui respecte le standard Symfony de PHP_CodeSniffer (correction des erreurs avec PHP CS Fixer mais il en reste !!!)
+* Tests unitaires et test fonctionnel réalisés 
+
+## Demo
+
+*Grab a simple block of code that makes use of your project/tool and paste it here.*
+
+
+## Errors and bugs
+
+If something is not behaving intuitively, it is a bug and should be reported.
+Report it here by creating an issue: https://github.com/datamade/your-repo-here/issues
+
+Help us fix the problem as quickly as possible by following [Mozilla's guidelines for reporting bugs.](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines#General_Outline_of_a_Bug_Report)
+
+
+
+
+## Copyright and attribution
+
+Copyright (c) 2016 DataMade. Released under the [MIT License](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy).
+
+
 Symfony Standard Edition
 ========================
 
