@@ -81,7 +81,7 @@ A refaire l'année prochaine !!
 [https://symfony.com/doc/current/setup/built_in_web_server.html](https://symfony.com/doc/current/setup/built_in_web_server.html)   
 [https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)   
 
-## Copyright and attribution
+### Copyright and attribution
 
 Copyright (c) 2016 DataMade. Released under the [MIT License](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy).
 
