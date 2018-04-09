@@ -17,15 +17,15 @@ Pour réaliser ce projet de CV, nous avons utilisé le framework Symfony 3.4.
 
 ### Pour commencer
 
-IDE utilisé : Cloud9
+IDE utilisé : _Cloud9_
 
-Installation de Symfony    
+Installation de _Symfony_    
 *Pré-requis : PHP 5.4*
 
-Installation de Composer    
+Installation de _Composer_    
 *Pré-requis : PHP 5.4*
 
-Base de données : MYSQL
+Base de données : _MySQL_
 
 Lien pour accéder à mon cv : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
 
@@ -37,12 +37,12 @@ Pour s'authentifier en tant qu'administrateur :
 
 * Voir mon CV à l'aide d'une URL web : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy](https://cv-symfony-emy10.c9users.io/web/app_dev.php/emy)
 * Intégration d'un template Bootstrap : [https://uicookies.com/downloads/myprofile-simple-html-resume-website-template/](https://uicookies.com/downloads/myprofile-simple-html-resume-website-template/)
-* Création de 3 entités (expérience, formation et loisirs). 
-* Être CRUD pour les parties expérience, formation et loisirs de ma page.
+* Création de _3 entités_ (expérience, formation et loisirs). 
+* Être _CRUD_ pour les parties expérience, formation et loisirs de ma page.
 * Création de formulaires permettant d'ajouter et de modifier des informations dans les parties expérience, formation et loisirs de mon CV.
 * Sécurisation de ma page et possibilité d'éditer des éléments si authentifié en tant qu'ADMIN.
-* Stockage des informations saisies dans la base de données MySQL (utilisation de l'interface Doctrine qui permet de faire le lien entre nos objets et les éléments de la base de données).
-* Production d'une API du CV avec API Plateform : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/api](https://cv-symfony-emy10.c9users.io/web/app_dev.php/api)
+* Stockage des informations saisies dans la _base de données MySQL_ (utilisation de l'interface Doctrine qui permet de faire le lien entre nos objets et les éléments de la base de données).
+* Production d'une _API_ du CV avec API Plateform : [https://cv-symfony-emy10.c9users.io/web/app_dev.php/api](https://cv-symfony-emy10.c9users.io/web/app_dev.php/api)
 * Code documenté et qui respecte le standard Symfony de PHP_CodeSniffer (correction des erreurs avec PHP CS Fixer mais il en reste !!!).
 * Tests unitaires et test fonctionnel réalisés (avec Codeception).
 
