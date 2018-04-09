@@ -64,7 +64,8 @@ Pour s'authentifier en tant qu'administrateur :
 ### Mon avis 
 
 Ce projet de réalisation de notre CV avec Symfony était très intéressant et utile car nous pourrons le transmettre à des entreprises ou même le montrer dans le cadre d'entretiens de motivation pour nos poursuites d'études.   
-De plus, nous avons pu découvrir les bases du framework, qui sont assez exceptionnelles et épatantes (beaucoup de composants sont fournis) même si nous avons eu peu de séances.
+De plus, nous avons pu découvrir les bases du framework, qui sont assez exceptionnelles et épatantes (beaucoup de composants sont fournis) même si nous avons eu peu de séances.   
+J'ai aussi découvert Github, un outil très pratique que je réutiliserai. 
 A refaire l'année prochaine !!
 
 ### Sources utilisées
